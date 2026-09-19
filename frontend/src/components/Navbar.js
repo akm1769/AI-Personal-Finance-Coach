@@ -44,7 +44,7 @@ export default function Navbar() {
   if (!user) {
     return (
       <nav style={navStyle}>
-        <div style={logoStyle}>💰 F1 Finance Coach</div>
+        <div style={logoStyle}>💰 Finance Coach</div>
         <ul style={linksStyle}>
           <li>
             <Link to="/login" style={{ ...linkStyle, background: '#e94560', padding: '7px 18px', borderRadius: '20px', color: '#fff', fontWeight: 'bold' }}>
@@ -58,7 +58,7 @@ export default function Navbar() {
 
   return (
     <nav style={navStyle}>
-      <div style={logoStyle}>💰 F1 Finance Coach</div>
+      <div style={logoStyle}>💰 Finance Coach</div>
       <ul style={linksStyle}>
         <li><Link to="/dashboard" style={linkStyle}>Dashboard</Link></li>
         <li><Link to="/transactions" style={linkStyle}>Transactions</Link></li>
