@@ -38,6 +38,7 @@ export default function Navbar() {
         <li><Link to="/transactions" style={linkStyle}>Transactions</Link></li>
         <li><Link to="/insights" style={linkStyle}>AI Insights</Link></li>
         <li><Link to="/budget" style={linkStyle}>Budget</Link></li>
+        <li><Link to="/login" style={{ ...linkStyle, background: '#e94560', padding: '6px 14px', borderRadius: '20px', color: '#fff' }}>Login</Link></li>
       </ul>
     </nav>
   );

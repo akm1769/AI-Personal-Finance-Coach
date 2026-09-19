@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
 import Insights from './pages/Insights';
 import Budget from './pages/Budget';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/budget" element={<Budget />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>
