@@ -112,11 +112,3 @@ versathon-project/
 | **10:30 AM** | **HARDCODED DEADLINE** | **Submit everything!** |
 
 ---
-
-## 🎯 Winning Strategy
-- **20/50 marks from GitHub Code** → Clean, documented, authentic commits
-- **10/50 from PPT** → Strong architecture diagrams + clear problem-solution mapping
-- **10/50 from Video** → 5–10 min polished demo walkthrough
-- **10/50 from Live Q&A** → Every team member can explain any part of the codebase
-EOF
-echo "✅ README.md updated with F1 problem statement and full plan"
