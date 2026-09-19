@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const navStyle = {
   display: 'flex',
@@ -18,6 +18,7 @@ const logoStyle = {
 
 const linksStyle = {
   display: 'flex',
+  alignItems: 'center',
   gap: '20px',
   listStyle: 'none',
 };
@@ -30,6 +31,31 @@ const linkStyle = {
 };
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const userStr = localStorage.getItem('user');
+  const user = userStr ? JSON.parse(userStr) : null;
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    navigate('/login');
+  };
+
+  // If not logged in, don't show the inner links
+  if (!user) {
+    return (
+      <nav style={navStyle}>
+        <div style={logoStyle}>💰 F1 Finance Coach</div>
+        <ul style={linksStyle}>
+          <li>
+            <Link to="/login" style={{ ...linkStyle, background: '#e94560', padding: '7px 18px', borderRadius: '20px', color: '#fff', fontWeight: 'bold' }}>
+              Sign In
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    );
+  }
+
   return (
     <nav style={navStyle}>
       <div style={logoStyle}>💰 F1 Finance Coach</div>
@@ -38,8 +64,27 @@ export default function Navbar() {
         <li><Link to="/transactions" style={linkStyle}>Transactions</Link></li>
         <li><Link to="/insights" style={linkStyle}>AI Insights</Link></li>
         <li><Link to="/budget" style={linkStyle}>Budget</Link></li>
-        <li><Link to="/login" style={{ ...linkStyle, background: '#e94560', padding: '6px 14px', borderRadius: '20px', color: '#fff' }}>Login</Link></li>
+        <li style={{ color: '#4ecca3', fontSize: '14px', marginLeft: '10px' }}>
+          👤 {user.name || user.email}
+        </li>
+        <li>
+          <button
+            onClick={handleLogout}
+            style={{
+              background: 'transparent',
+              border: '1px solid #e94560',
+              color: '#e94560',
+              padding: '6px 14px',
+              borderRadius: '20px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            Logout
+          </button>
+        </li>
       </ul>
     </nav>
   );
 }
+
